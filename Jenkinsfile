@@ -13,20 +13,28 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            //git branch: 'main', url: 'https://github.com/jynx0405/MavenAnsibleWebApp1.git'
+            steps {
+                //git branch: 'main', url: 'https://github.com/jynx0405/MavenAnsibleWebApp1.git'
+            }
         }
 
         stage('Build') {
-            //sh 'mvn clean package'  // Run Maven build
+            steps {
+                //sh 'mvn clean package'
+            }
         }
 
         stage('Archive') {
-            //archiveArtifacts artifacts: 'target/*.war', fingerprint:true
+            steps {
+                //archiveArtifacts artifacts: 'target/*.war', fingerprint:true
+            }
         }
 
         stage('Deploy') {
-            //sh 'mvn clean package'
-            //sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
+            steps {
+                //sh 'mvn clean package'
+                //sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
+            }
         }
     }
 }
