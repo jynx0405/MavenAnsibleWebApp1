@@ -14,24 +14,28 @@ pipeline {
 
         stage('Checkout') {
             steps {
+                echo 'Checkout Stage'
                 //git branch: 'main', url: 'https://github.com/jynx0405/MavenAnsibleWebApp1.git'
             }
         }
 
         stage('Build') {
             steps {
+                echo 'Build Stage'
                 //sh 'mvn clean package'
             }
         }
 
         stage('Archive') {
             steps {
+                echo 'Archive Stage'
                 //archiveArtifacts artifacts: 'target/*.war', fingerprint:true
             }
         }
 
         stage('Deploy') {
             steps {
+                echo 'Deploy Stage'
                 //sh 'mvn clean package'
                 //sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
             }
